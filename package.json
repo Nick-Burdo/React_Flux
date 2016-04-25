@@ -1,0 +1,22 @@
+{
+  "name": "ReactBrowserify",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "http-server ./",
+    "build": "browserify -t [ babelify --presets [ react ] ] src/index.js -o build/app.js -d",
+    "vendor": "browserify  vendor/lib.js -o build/lib.js"
+  },
+  "author": "Nick Burdo",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "react-dom": "~15.0.1",
+    "react": "~15.0.1",
+    "babelify": "~7.2.0",
+    "babel-preset-react": "~6.5.0",
+    "bower": "~1.7.9",
+    "whatwg-fetch": "~0.11.0",
+    "es6-promise": "~3.1.2"
+  }
+}
