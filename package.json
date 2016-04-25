@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "http-server ./",
-    "build": "browserify -t [ babelify --presets [ react ] ] src/index.js -o build/app.js -d",
-    "vendor": "browserify  vendor/lib.js -o build/lib.js"
+    "build": "browserify -t [ babelify --presets [ react ] ] src/index.js -o build/app.js -d"
   },
   "author": "Nick Burdo",
   "license": "BSD-2-Clause",
