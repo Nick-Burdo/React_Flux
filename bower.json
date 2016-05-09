@@ -1,0 +1,21 @@
+{
+  "name": "ReactBrowserify",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Nick Burdo"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "https://github.com/Nick-Burdo/React_Flux",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery-1.12.3.min": "https://code.jquery.com/jquery-1.12.3.min.js",
+    "bootstrap": "^3.3.6"
+  }
+}

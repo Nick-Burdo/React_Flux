@@ -5,6 +5,8 @@
 var dispatcher = require('../flux/dispatcher');
 var actions = require('../flux/actions');
 var store = require('../store/store');
+var MessageFormat = require('./MessageFormat');
+var LocaleSwitcher = require('./LocaleSwitcher');
 
 
 
@@ -34,9 +36,17 @@ module.exports = React.createClass({
         return (
 
             <div>
+                <LocaleSwitcher />
+
+                <hr />
+
                 {this.state.open ? <p>{this.state.message}</p> : null}
                 <button onClick={this.toggleSidebar}>toggle message</button>
                 <button onClick={this.fetch}>fetch message</button>
+
+                <hr />
+
+                <MessageFormat />
             </div>
         )
     }

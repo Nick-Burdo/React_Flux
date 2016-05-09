@@ -12,7 +12,6 @@ var store = (function () {
         open: false,
         message: 'Initial message'
     };
-    var Listeners = [];
 
     dispatcher.register(actions.SHOW_MSG, function() {
         state.open = true;
