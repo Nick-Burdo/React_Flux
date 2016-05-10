@@ -25,33 +25,58 @@ module.exports = React.createClass({
         }
     },
     render: function () {
+        var nameLabelProps = {
+            ntmlFor: "messageFormatInputName",
+            component: "label",
+            content: "ReactBrowserify.name",
+            fallback: 'Name:'
+        };
+        var genderLabelProps = {
+            component: "label",
+            content: "ReactBrowserify.gender",
+            fallback: 'Gender:'
+        };
+        var genderMaleLabelProps = {
+            content: "ReactBrowserify.male",
+            fallback: 'Male'
+        };
+        var genderFemaleLabelProps = {
+            content: "ReactBrowserify.female",
+            fallback: 'Female'
+        };
+        var notificationCountLabelProps = {
+            ntmlFor: "messageFormatInputNotificationsCount",
+            component: "label",
+            content: "ReactBrowserify.notificationCount",
+            fallback: 'Notification count:'
+        };
         return (
             <div className="panel panel-default">
                 <div className="panel-body">
                     <form>
                         <div className="form-group">
-                            <Translate ntmlFor="messageFormatInputName" component="label" content="ReactBrowserify.name" />
+                            <Translate {...nameLabelProps} />
                             <input type="text" className="form-control" id="messageFormatInputName" onChange={this.setName} />
                         </div>
                         <div className="form-group">
-                            <label>Gender:</label>
+                            <Translate {...genderLabelProps} />
                             <div className="radio">
                                 <label>
                                     <input type="radio" name="messageFormatGender" id="messageFormatGenderMale"
                                            value="male"  onClick={this.setGender} checked={this.state.gender=='male'} />
-                                        Male
+                                        <Translate {...genderMaleLabelProps} />
                                 </label>
                             </div>
                             <div className="radio">
                                 <label>
                                     <input type="radio" name="messageFormatGender" id="messageFormatGenderFemale"
                                            value="female" onClick={this.setGender} checked={this.state.gender=='female'}/>
-                                        Female
+                                        <Translate {...genderFemaleLabelProps} />
                                 </label>
                             </div>
                         </div>
                         <div className="form-group">
-                            <label ntmlFor="messageFormatInputNotificationsCount">Notifications count:</label>
+                            <Translate {...notificationCountLabelProps} />
                             <input type="number" className="form-control" id="messageFormatInputNotificationsCount"
                                    onChange={this.setNotificationCount} value={this.state.notificationCount}  />
                         </div>

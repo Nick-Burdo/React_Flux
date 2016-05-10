@@ -8,7 +8,7 @@ var counterpart = require('counterpart');
 
 var Component = require('./components/Component');
 
-counterpart.registerTranslations('en', require('./locale/en'));
+//counterpart.registerTranslations('en', require('./locale/en'));
 
 counterpart.registerTranslations('ru', require('./locale/counterpart-ru'));
 

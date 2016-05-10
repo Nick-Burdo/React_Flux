@@ -15,16 +15,19 @@ module.exports = React.createClass({
     },
 
     render: function() {
+        var props = {
+            defaultValue: counterpart.getLocale(),
+            onChange: this.handleChange,
+            className: "form-control input-sm"
+        };
         return (
-            <p>
-                <label>Switch Locale: </label>
-
-                <select defaultValue={counterpart.getLocale()} onChange={this.handleChange}>
-                    <option>en</option>
-                    <option>ru</option>
-                    <option>uk</option>
+            <div className="form-group col-sm-2 col-sm-offset-10">
+                <select {...props}>
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                    <option value="uk">Українська</option>
                 </select>
-            </p>
+            </div>
         );
     }
 });

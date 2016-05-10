@@ -6,6 +6,10 @@ module.exports = {
     ReactBrowserify: {
         greeting: 'Привет, %(name)s! Как поживаешь?',
         name: 'Имя:',
+        gender: 'Пол:',
+        male: 'Мужской',
+        female: 'Женский',
+        notificationCount: 'Количество заметок:',
         notificationsCountMessage: {
             male: {
                 zero: '%(name)s не добавлял заметок в записную книгу.',

@@ -38,19 +38,22 @@ module.exports = React.createClass({
         var localTimeShort = translate.localize(date, { type: 'time', format: 'short' }); // => '13:46'
         var localTimeLong = translate.localize(date, { type: 'time', format: 'long' });  // => '13:46:24 +01:00'
 
-        var content = 'ReactBrowserify.notificationsCountMessage.' + this.state.data.gender;
+        var props = {
+            component: 'p',
+            name: this.state.data.name,
+            count: this.state.data.notificationsCount,
+            content: 'ReactBrowserify.notificationsCountMessage.' + this.state.data.gender,
+            fallback: '%(name)s added %(count)s notifications to his notebook.'
+        };
 
         return (
             <div className="panel panel-default">
                 <div className="panel-body">
-                    <p>
-                        <Translate name={this.state.data.name}
-                                   count={this.state.data.notificationsCount}
-                                   content={content} />
+                    <Translate {...props} />
 
-                    </p>
+                    <hr />
 
-                    <p>Gender: {this.state.data.gender}; Locale: {this.props.locale}</p>
+                    <p>Gender: {this.state.data.gender}; Locale: {this.state.data.locale}</p>
 
                     <hr />
 
@@ -65,9 +68,6 @@ module.exports = React.createClass({
                     {localTimeLong}
 
 
-                    <hr />
-
-                    <Translate name={this.state.data.name} component="h2" content="ReactBrowserify.greeting" />
                 </div>
             </div>
         );
