@@ -10,7 +10,7 @@ var messageFormatStore = (function () {
 
     var state = {
         data: {
-            name: 'Tigra',
+            name: 'Nick',
             gender: 'male',
             contactsCount: 5,
             callsCount: 4,
